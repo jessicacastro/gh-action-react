@@ -1,0 +1,12 @@
+name: Events demonstration
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Events demonstration
+        run: echo "This workflow was triggered via a ${{ github.event_name }} event."
