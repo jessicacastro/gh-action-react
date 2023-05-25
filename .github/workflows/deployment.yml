@@ -5,6 +5,7 @@ on:
       - main
       - "dev-*" # dev-new-feature dev-this-new
       - "feat/**" # feat/new feat/new/button
+      - development
     paths-ignore:
       - ".github/workflows/*"
   workflow_dispatch:
