@@ -6,8 +6,8 @@ on:
       - "dev-*" # dev-new-feature dev-this-new
       - "feat/**" # feat/new feat/new/button
       - development
-    paths-ignore:
-      - ".github/workflows/*"
+    # paths-ignore:
+    #   - ".github/workflows/*"
   workflow_dispatch:
 jobs:
   lint:
@@ -46,6 +46,7 @@ jobs:
           path: |
             dist
             package.json
+            .eslintrc.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
