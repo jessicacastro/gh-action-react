@@ -5,9 +5,9 @@ on:
       - main
       - "dev-*" # dev-new-feature dev-this-new
       - "feat/**" # feat/new feat/new/button
-      - development
-    # paths-ignore:
-    #   - ".github/workflows/*"
+      - developmentc
+    paths-ignore:
+      - "vite.config.js"
   workflow_dispatch:
 jobs:
   lint:
@@ -43,14 +43,22 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: dist-files
-          path: |
-            dist
-            package.json
-            .eslintrc.json
+          path: dist
+          # path: |
+          #   dist
+          #   package.json
+          #   .eslintrc.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Get build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-files
+          path: dist
+      - name: Output files
+        run: ls -la dist
       - name: Deploy
         run: echo "Deployed to Vercel!"
   # sonarqube:
