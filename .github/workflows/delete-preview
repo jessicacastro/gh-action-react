@@ -1,7 +1,6 @@
-name: Delete preview
+name: Delete preview on Vercel
 on:
   pull_request:
-    types: [closed]
   delete:
     environment: preview
     runs-on: ubuntu-latest
