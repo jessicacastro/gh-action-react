@@ -19,8 +19,8 @@ const HELP_ITEMS = [
   },
   {
     id: "h3",
-    title: "Olá, funciona?",
-    text: "GitHub Actions is an automation service (or CI / CD service) that helps you automate repository-related workflows and processes.",
+    title: "Let's GO?",
+    text: "Now you can start working with workflows and processes on Github!",
   },
 ];
 
