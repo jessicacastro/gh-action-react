@@ -21,11 +21,3 @@ jobs:
 
       - name: Deploy project artifacts
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_ACCESS_TOKEN }}
-  delete:
-    if: ${{ github.event.action == 'closed' }}
-    environment: preview
-    runs-on: ubuntu-latest
-    steps:
-      - uses: snaplet/vercel-action@v3
-        with:
-          delete: true
