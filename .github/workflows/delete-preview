@@ -1,6 +1,7 @@
 name: Delete preview on Vercel
 on:
   pull_request:
+jobs:
   delete:
     environment: preview
     runs-on: ubuntu-latest
