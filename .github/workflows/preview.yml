@@ -1,6 +1,7 @@
 name: Preview deployment configuration
 on:
-  pull_request: [opened, synchronize, reopened, edited]
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
 jobs:
   preview-release:
     environment: preview
