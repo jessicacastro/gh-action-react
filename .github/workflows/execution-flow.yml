@@ -83,6 +83,8 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       artifact-name: dist-files
+    secrets:
+      some-secret: secret-test
   report:
     needs: deploy
     if: failure()
